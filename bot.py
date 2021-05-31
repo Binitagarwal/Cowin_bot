@@ -1,5 +1,5 @@
 import asyncio
-from os import getenv
+import os
 import discord
 from datetime import date
 from datetime import timedelta
@@ -12,8 +12,9 @@ import cowin
 from datetime import date
 from datetime import timedelta
 
-load_dotenv()
-TOKEN = getenv('DISCORD_TOKEN')
+
+TOKEN = os.environ['DISCORD_TOKEN']
+
 
 bot = commands.Bot(command_prefix='&')
 
@@ -92,6 +93,6 @@ async def hello(ctx,arg=721101,show='no'):
                 return
         
 
-
-bot.run(TOKEN) 
+if __name__ == "__main__":
+  bot.run(TOKEN) 
 
